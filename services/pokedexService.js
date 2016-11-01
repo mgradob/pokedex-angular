@@ -1,4 +1,7 @@
 (function () {
+    
+    "use strict";
+    
     var baseUrl = "http://pokeapi.co/api/v2";
 
     var pokedex = function ($http) {
@@ -14,12 +17,22 @@
                 .then(function (response) {
                     return response.data;
                 });
+        };
+        
+        var getSpecificPokemon = function (number){
+        
+            return $http.get(baseUrl + "/pokemon/" + number +"/")
+                        .then(function (response) {
+                            console.log(response.data)
+                            return response.data; 
+            });
         }
 
         return {
             getAllPokemon: getAllPokemon,
-            getPokemonByPage: getPokemonByPage
-        }
+            getPokemonByPage: getPokemonByPage,
+            getSpecificPokemon: getSpecificPokemon
+        };
     };
 
     var pokedexModule = angular.module("pokedexApp");

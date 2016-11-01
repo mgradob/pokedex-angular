@@ -6,16 +6,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
     <script src="../app.js"></script>
     <script src="../controllers/main-controller.js"></script>
+    <script src="../services/pokedexService.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body ng-controller = "MainController">
     <div>
         <label>Name:</label>
-        <input type="text" ng-model="name" placeholder="Enter your name here">
+        <form ng-submit="getOnePokemon(pokeNum)" type="text" ng-model="pokeNum" placeholder="Enter your name here">
+            <input type="search" placeholder="Enter your name here">
+            <input type="submit" value="search">
+         </form>
         <hr>
-        <h1>Hello {{ name }}!</h1>
+        <h1>Hello {{ datas.name }}!</h1>
+        <h1>{{message}}</h1>
     </div>
+   
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sprite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="d in datas">
+                <td>{{d.name}}</td>
+                <td>{{miVariable}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
 </body>
 
 </html>
