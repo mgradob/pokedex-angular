@@ -1,17 +1,17 @@
 (function () {
-    
     "use strict";
-    
-    var app = angular.module("pokedexApp", ['ngRoute']);
 
-    app.config(function ($routeProvider) {
+    var app = angular.module("pokedexApp", ['ngRouter']);
+
+    app.config(["$routeProvider", function ($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when("/", {
                 controller: 'MainController',
-                templateUrl: 'index.html'
+                templateUrl: 'views/all-pokemon.html'
             })
-            .otherwise({
-                redirectTo: '/'
+            .when("/search", {
+                controller: 'SearchController',
+                templateUrl: 'views/search-pokemon.html'
             });
-    });
+        }]);
 }());

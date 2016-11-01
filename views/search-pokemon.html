@@ -1,27 +1,15 @@
-<!doctype html>
-<html ng-app="pokedexApp">
-
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
-    <script src="../app.js"></script>
-    <script src="../controllers/main-controller.js"></script>
-    <script src="../services/pokedexService.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body ng-controller = "MainController">
+<div ng-controller="SearchController">
     <div>
         <label>Name:</label>
         <form ng-submit="getOnePokemon(pokeNum)" type="text" ng-model="pokeNum" placeholder="Enter your name here">
             <input type="search" placeholder="Enter your name here">
             <input type="submit" value="search">
-         </form>
+        </form>
         <hr>
         <h1>Hello {{ datas.name }}!</h1>
         <h1>{{message}}</h1>
     </div>
-   
+
     <table>
         <thead>
             <tr>
@@ -36,7 +24,4 @@
             </tr>
         </tbody>
     </table>
-    
-</body>
-
-</html>
+</div>
