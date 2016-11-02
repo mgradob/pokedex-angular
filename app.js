@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var app = angular.module("pokedexApp", ['ngRouter']);
+    var app = angular.module("pokedexApp", ['ngRoute']);
 
     app.config(["$routeProvider", function ($routeProvider) {
         $routeProvider

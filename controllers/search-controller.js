@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('pokedexApp', [])
+    angular.module('pokedexApp')
         .controller('SearchController', function ($scope, pokedex) {
             $scope.loadInitialData = function () {
                 pokedex.getAllPokemon()
