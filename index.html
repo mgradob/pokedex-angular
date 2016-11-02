@@ -1,26 +1,33 @@
 <!doctype html>
-<html ng-app="pokedexApp">
+<html>
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+<script src="angular.min.js"></script>
+    
+<script src="angular-route.min.js"></script>
 
     <script src="app.js"></script>
 
     <script src="controllers/main-controller.js"></script>
     <script src="controllers/search-controller.js"></script>
-
+    <script src="controllers/index-controller.js"></script>
     <script src="services/pokedexService.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body  ng-app="pokedexApp">
+    
 
     <h1>Pokedex</h1>
+    <a href="#/all">City 1</a>
 
-    <div ng-view></div>
+    <div>
+		<div ng-view></div>
+	  </div>
+
+
 
 </body>
-
+    
 </html>

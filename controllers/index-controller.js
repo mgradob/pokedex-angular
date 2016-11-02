@@ -1,8 +1,11 @@
+
+
 (function () {
 
     angular.module('pokedexApp')
-            .controller('mainController', function ($scope) {
+            .controller('indexController', function ($scope) {
             $scope.title = "Pokedex App";
         });
 
 }());
+

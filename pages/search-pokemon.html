@@ -1,0 +1,27 @@
+<div class="container">
+    <div>
+        <label>Name:</label>
+        <form ng-submit="getOnePokemon(pokeNum)" type="text" ng-model="pokeNum" placeholder="Enter your name here">
+            <input type="search" placeholder="Enter your name here">
+            <input type="submit" value="search">
+        </form>
+        <hr>
+        <h1>Hello {{ datas.name }}!</h1>
+        <h1>{{message}}</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sprite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="d in datas">
+                <td>{{d.name}}</td>
+                <td>{{miVariable}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

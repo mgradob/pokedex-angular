@@ -1,8 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('pokedexApp', [])
-        .controller('SearchController', function ($scope, pokedex) {
+   angular.module('pokedexApp')
+            .controller('searchController',
+   function ($scope, pokedex) {
             $scope.loadInitialData = function () {
                 pokedex.getAllPokemon()
                     .then(onLoadInitialData, onError);
@@ -22,4 +23,5 @@
                     .then(onLoadInitialData, onError);
             };
         });
+
 }());

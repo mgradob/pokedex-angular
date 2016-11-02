@@ -1,17 +1,20 @@
-(function () {
-    "use strict";
+(function(){
+    var app = angular.module('pokedexApp', ['ngRoute']);
 
-    var app = angular.module("pokedexApp", ['ngRouter']);
-
-    app.config(["$routeProvider", function ($routeProvider) {
+    app.config(function ($routeProvider) {
         $routeProvider
-            .when("/", {
-                controller: 'MainController',
-                templateUrl: 'views/all-pokemon.html'
-            })
-            .when("/search", {
-                controller: 'SearchController',
-                templateUrl: 'views/search-pokemon.html'
-            });
-        }]);
+            .when('/index' , {
+                templateUrl : 'index.html',
+                controller : 'indexController'
+        })
+        .when('/all' , {
+            templateUrl : 'pages/all-pokemon.html',
+            controller : 'mainController'
+        })
+        .when('/search',{
+            templateUrl : 'pages/search-pokemon.html',
+            controller : 'searchController'
+        });
+    });
 }());
+

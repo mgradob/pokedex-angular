@@ -3,8 +3,7 @@
 
     var baseUrl = "http://pokeapi.co/api/v2";
 
-    angular.module("pokedexApp")
-        .service("pokedex", function ($http) {
+        var pokedex = function ($http) {
             var getAllPokemon = function () {
                 return $http.get(baseUrl + "/pokemon")
                     .then(function (response) {
@@ -32,5 +31,7 @@
                 getPokemonByPage: getPokemonByPage,
                 getSpecificPokemon: getSpecificPokemon
             };
-        });
+        };
+    var module = angular.module("pokedexApp");
+    module.factory("pokedex",pokedex);
 }());
